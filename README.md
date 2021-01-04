@@ -22,6 +22,7 @@ Todo:
 7) Wire management for TC units - Single-tool will use improved wiring using cable chains - In development, will be used on single-tool units, and used for cabling to E3D Stepper Head
 
 Any Questions, Create issues or hit me up on discord - https://discord.gg/daXRDZf or twitter - [@LukesLaboratory](https://twitter.com/LukesLaboratory)
+You can also catch me on the [Jubilee discord](https://discord.gg/bPFuWEHP) - an incredible amount of learning was done here. 
 
 Liscense
 
