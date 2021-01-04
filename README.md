@@ -1,6 +1,8 @@
 # Stablebot-Core
 High-Performance CoreXY printer capable of Toolchanging and Ease-of-fabrication
 
+![](https://pbs.twimg.com/media/Eg1AolzX0AAoIeH?format=jpg&name=large)
+
 The goal is to make an any-size machine that's capable of high-speed printing as well as toolchanging. 
 
 This is the first attempt at release - Some files may be not correct. Feel free to shoot me an issue. This export is of my Currently built large machine (622x622x1000) with some new improvements made for my small machine. 
