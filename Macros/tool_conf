@@ -1,0 +1,87 @@
+;====Tool 0======
+M308 S1 P"1.temp0" Y"thermistor" T100000 B4725 C7.060000e-8 A"T0 Hemera" ; configure sensor 1 as thermistor on pin temp2
+M950 H1 C"1.out0" T1                           ; create nozzle heater output on out2 and map it to sensor 1
+;M143 H1 P1 S285 A0                                  ; set temperature limit for heater 1 to 280C
+;M307 H1 A B0 S1.00                             ; disable bang-bang mode for the nozzle heater and set PWM limit
+
+;====Tool 1======
+M308 S2 P"1.temp1" Y"pt1000" A"T1 Hemera"; configure sensor 1 as thermistor on pin temp2
+M950 H2 C"1.out1" T2                           ; create nozzle heater output on out2 and map it to sensor 1
+;M308 S2 P"0.temp1" Y"thermistor" T100000 B4725 C7.060000e-8 A"T1 Hemera"; configure sensor 1 as thermistor on pin temp2
+;M950 H2 C"0.out3" T2                           ; create nozzle heater output on out2 and map it to sensor 1
+
+;M143 H2 P2 S285 A0                                 ; set temperature limit for heater 1 to 280C
+M307 H2 A462.1 C268.5 D15 B0 S1.00                             ; disable bang-bang mode for the nozzle heater and set PWM limit
+
+;====Tool 2======
+M308 S3 P"1.temp2" Y"pt1000" A"T2 Slice"
+M950 H3 C"1.out2" T3                           ; create nozzle heater output on out2 and map it to sensor 1
+M307 H3 A392.8 C173.9 D1.5 S1.0 V24.0 B0
+M143 H3 P0 S450 A0                                 ; set temperature limit for heater 1 to 280C
+
+;====Tool 3======
+;M308 S3 P"1.temp2" Y"thermistor" T100000 B4725 C7.060000e-8 A"T2 Volcano"; configure sensor 1 as thermistor on pin temp2
+;M308 S3 P"1.temp2" Y"pt1000" A"T2 Volcano"
+;M950 H3 C"1.out2" T3                           ; create nozzle heater output on out2 and map it to sensor 1
+;M307 H3 A392.8 C173.9 D1.5 S1.0 V24.0 B0
+;M143 H3 P0 S450 A0                                 ; set temperature limit for heater 1 to 280C
+;M307 H2 B0 S1.00                             ; disable bang-bang mode for the nozzle heater and set PWM limit
+
+; Fans T0
+M950 F0 C"1.out7"                         ; create fan 0 on pin out7 and set its frequency
+M106 P0 C"Part_Cool0 FAN"           ; set fan 0 value. Thermostatic control is turned off
+M950 F1 C"1.out6"                        ; create fan 1 on pin out8 and set its frequency
+M106 P1 S255 H1 T45                            ; set fan 1 value. Thermostatic control is turned on
+
+; Fans T1
+M950 F2 C"1.out8"                         ; create fan 2 on pin out3 and set its frequency
+M106 P2 C"Part_cool1 FAN"           ; set fan 0 value. Thermostatic control is turned off
+M950 F3 C"1.out3"                        ; create fan 1 on pin out3 and set its frequency
+M106 P3 S255 H2 T45                          ; set fan 1 value. Thermostatic control is turned on
+
+; Fans T2
+M950 F4 C"1.out4"                         ; create fan 2 on pin out3 and set its frequency
+M106 P4 C"Part_cool2 FAN"           ; set fan 0 value. Thermostatic control is turned off
+M950 F5 C"1.out5"                        ; create fan 1 on pin out3 and set its frequency
+M106 P5 S255 H3 T45                          ; set fan 1 value. Thermostatic control is turned on
+
+; Fans T3
+;M950 F4 C"1.out4"                         ; create fan 2 on pin out3 and set its frequency
+;M106 P4 C"Part_cool2 FAN"           ; set fan 0 value. Thermostatic control is turned off
+;M950 F5 C"1.out5"                        ; create fan 1 on pin out3 and set its frequency
+;M106 P5 S255 H3 T45                          ; set fan 1 value. Thermostatic control is turned on
+
+; Filament Endstop
+;M591 D2 P1 C"0.io5.in" S1						; sets a filament sensor on io5
+
+; Positioning T0
+M563 P0 D0 H1 F0 S"Hemera"                             ; define tool 0
+;G10 P0 X20.5 Y41.5 Z-5.62                              ; set tool 0 axis offsets - Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+G10 P0 X21.213 Y43.569 Z-14.12                              ; set tool 0 axis offsets - Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+;G10 P0 R170 S215                                 ; set initial tool 0 active and standby temperatures to 0C
+
+; Positioning T1
+M563 P1 D1 H2 F2 S"Hemera"                            ; define tool 1
+;G10 P1 X20.4 Y41.9 Z-5.25                            ; set tool 1 axis offsets Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+G10 P1 X21.147 Y44.446 Z-14                        ; set tool 1 axis offsets Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+;G10 P1 R170 S215                                      ; set initial tool 1 active and standby temperatures to 0C
+
+; Positioning T2
+M563 P2 D2 H3 F4 S"Slice"                            ; define tool 1
+;G10 P2 X30 Y30 Z-44.14                            ; set tool 1 axis offsets Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+;G10 P2 X0.0 Y0.0 Z-14 
+G10 P2 X25.295 Y52.281 Z-20.7
+;G10 P2 R170 S215                                 ; set initial tool 1 active and standby temperatures to 0C
+
+; Positioning T3
+;M563 P2 D2 H3 F4 S"T2 Supervolcano"                            ; define tool 1
+;G10 P2 X30 Y30 Z-50.86                            ; set tool 1 axis offsets Negative=nozzle below switch, Positive = nozzle above switch, larger negative, lower below - to make more space, go more negative
+;G10 P2 X0.0 Y0.0 Z-14 
+;G10 P2 X0.0 Y0.0 Z-14.5
+;G10 P2 R170 S215                                 ; set initial tool 1 active and standby temperatures to 0C
+
+;output from TAMV
+
+G10 P0 X20.856 Y43.772
+G10 P1 X20.834 Y43.845 
+G10 P2 X26.651 Y53.816 
