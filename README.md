@@ -7,7 +7,7 @@ The goal is to make an any-size machine that's capable of high-speed printing as
 
 This is the first attempt at release - Some files may be not correct. Feel free to shoot me an issue. This export is of my Currently built large machine (622x622x1000) with some new improvements made for my small machine. 
 
-[Extrusion Sizer](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLunrlETLCIH64-9QaH8qC3pTpKAKrUyyXtyPSrejF00iHR1POlAnIlyCopPyQnQImq5J9MzHw9yq7/pubhtml)
+[Extrusion Sizer](https://docs.google.com/spreadsheets/d/1divmRL_RmXVi3Z5ql3C13kvea18Q-DxR8h9kwekK1nM/)
 
 Review additional design discussion on [my blog](https://www.lukeslab.online/blog/tag/Stablebot)
 
