@@ -12,7 +12,7 @@ Review additional design discussion on [my blog](https://www.lukeslab.online/blo
 
 ## 🔨 Tools
 
-[Extrusion size calculator - StableBot Core](https://docs.google.com/spreadsheets/d/1divmRL_RmXVi3Z5ql3C13kvea18Q-DxR8h9kwekK1nM/)
+[Extrusion size calculator - Stablebot Core](https://docs.google.com/spreadsheets/d/1divmRL_RmXVi3Z5ql3C13kvea18Q-DxR8h9kwekK1nM/)
 
 ## ✅ To-do
 
